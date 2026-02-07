@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="card-header">
+            <h1><i class="fas fa-heart"></i> Valentine's Day Card</h1>
+            <p class="subtitle">Upload your photos to create a personalized romantic card</p>
+        </header>
+
+        <main class="card-content">
+            <div class="card-preview">
+                <!-- The Valentine's Day Card -->
+                <div class="valentine-card" id="valentineCard">
+                    <!-- Background elements -->
+                    <div class="background-elements">
+                        <div class="hearts">
+                            <div class="heart heart-1"></div>
+                            <div class="heart heart-2"></div>
+                            <div class="heart heart-3"></div>
+                            <div class="heart heart-4"></div>
+                            <div class="heart heart-5"></div>
+                        </div>
+                        <div class="sparkles">
+                            <div class="sparkle sparkle-1"></div>
+                            <div class="sparkle sparkle-2"></div>
+                            <div class="sparkle sparkle-3"></div>
+                            <div class="sparkle sparkle-4"></div>
+                            <div class="sparkle sparkle-5"></div>
+                        </div>
+                        <div class="bokeh bokeh-1"></div>
+                        <div class="bokeh bokeh-2"></div>
+                        <div class="bokeh bokeh-3"></div>
+                    </div>
+                    
+                    <!-- Couple photos container - UPDATED FOR 4 PHOTOS -->
+                    <div class="photos-container">
+                        <div class="photo-frame frame-1">
+                            <div class="empty-photo-placeholder" id="photo1">
+                                <i class="fas fa-heart"></i>
+                                <span>Photo 1</span>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-frame frame-2">
+                            <div class="empty-photo-placeholder" id="photo2">
+                                <i class="fas fa-heart"></i>
+                                <span>Photo 2</span>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-frame frame-3">
+                            <div class="empty-photo-placeholder" id="photo3">
+                                <i class="fas fa-heart"></i>
+                                <span>Photo 3</span>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-frame frame-4">
+                            <div class="empty-photo-placeholder" id="photo4">
+                                <i class="fas fa-heart"></i>
+                                <span>Photo 4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Romantic message -->
+                    <div class="romantic-message">
+                        <div class="message-text">
+                            "Every moment with you is my favorite memory. Happy Valentine's Day, Nifad ❤️"
+                        </div>
+                        <div class="signature">With all my love</div>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="card-controls">
+                    <button id="downloadBtn" class="control-btn">
+                        <i class="fas fa-download"></i> Download Card
+                    </button>
+                    <button id="printBtn" class="control-btn">
+                        <i class="fas fa-print"></i> Print Card
+                    </button>
+                    <button id="shareBtn" class="control-btn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h2><i class="fas fa-images"></i> Upload Your Photos</h2>
+                <p class="instruction">For best results, upload high-quality photos with good lighting. The system will automatically blend them into the romantic design.</p>
+                
+                <div class="upload-options">
+                    <div class="upload-option">
+                        <h3>Photo 1 (Main)</h3>
+                        <p>A close-up portrait of you both</p>
+                        <input type="file" id="upload1" accept="image/*" class="file-input">
+                        <label for="upload1" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose Photo
+                        </label>
+                    </div>
+                    
+                    <div class="upload-option">
+                        <h3>Photo 2 (Secondary)</h3>
+                        <p>A memory photo with emotional connection</p>
+                        <input type="file" id="upload2" accept="image/*" class="file-input">
+                        <label for="upload2" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose Photo
+                        </label>
+                    </div>
+                    
+                    <div class="upload-option">
+                        <h3>Photo 3 (Tertiary)</h3>
+                        <p>A candid moment or special memory</p>
+                        <input type="file" id="upload3" accept="image/*" class="file-input">
+                        <label for="upload3" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose Photo
+                        </label>
+                    </div>
+                    
+                    <div class="upload-option">
+                        <h3>Photo 4 (Additional)</h3>
+                        <p>Another special moment to remember</p>
+                        <input type="file" id="upload4" accept="image/*" class="file-input">
+                        <label for="upload4" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose Photo
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="customization">
+                    <h3><i class="fas fa-palette"></i> Customize Card</h3>
+                    <div class="custom-controls">
+                        <div class="control-group">
+                            <label for="glowSlider">Cinematic Glow</label>
+                            <input type="range" id="glowSlider" min="0" max="100" value="70">
+                        </div>
+                        <div class="control-group">
+                            <label for="nameInput">Recipient's Name</label>
+                            <input type="text" id="nameInput" value="Nifad">
+                        </div>
+                        <button id="resetBtn" class="reset-btn">
+                            <i class="fas fa-redo"></i> Reset to Default
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <h3><i class="fas fa-star"></i> Premium Features</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> High-resolution output suitable for printing</li>
+                        <li><i class="fas fa-check"></i> Studio-quality finish with soft romantic aesthetic</li>
+                        <li><i class="fas fa-check"></i> Natural face preservation with realistic skin tones</li>
+                        <li><i class="fas fa-check"></i> Warm lighting and dreamy atmosphere</li>
+                        <li><i class="fas fa-check"></i> Elegant black, white, and rose-gold color palette</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="card-footer">
+    <div class="footer-content">
+        <div class="footer-heart">
+            <i class="fas fa-heart heart-icon"></i>
+        </div>
+        
+        <p class="footer-message">
+            Crafted with passion for timeless Valentine's Day memories
+        </p>
+        
+        <div class="developer-section">
+            <div class="developer-card">
+                <div class="developer-info">
+                    <div class="developer-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="developer-details">
+                        <h4>Project Developer</h4>
+                        <div class="developer-name">
+                            <i class="fas fa-code"></i>
+                            <span class="name-highlight">Nifad Hasan Eimu</span>
+                        </div>
+                        <p class="developer-title">Frontend Developer & Designer</p>
+                    </div>
+                </div>
+                
+                <div class="developer-links">
+                    <a href="https://www.nifadhasan.com/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                        <i class="fas fa-globe"></i>
+                        Visit Portfolio
+                    </a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/nifadhasanh21/" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/nifadhasanh21" class="social-icon" title="GitHub" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://x.com/nifad_hasan_h21" class="social-icon" title="Twitter" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        <a href="mailto:career@nifadhasan.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2026 Romantic Valentine Card Generator | All Rights Reserved
+            </p>
+            <p class="tech-stack">
+                <i class="fas fa-laptop-code"></i>
+                Built with: HTML5, CSS3, JavaScript & ❤️
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Hidden canvas for downloading -->
+    <canvas id="cardCanvas" style="display: none;"></canvas>
+    
+    <!-- Success message -->
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Photo uploaded successfully!</h3>
+            <p>The card has been updated with your photo.</p>
+            <button id="closeSuccess" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
